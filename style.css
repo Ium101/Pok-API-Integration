@@ -175,7 +175,7 @@ body {
   .type-steel    { --type-color: #B7B7CE; --type-bg-inverted: #484838; }
   .type-fairy    { --type-color: #D685AD; --type-bg-inverted: #286451; }
   
-  /* Carregando */
+  /* Carregando / Loading */
   #resultado.loading {
     text-align: center;
     font-weight: bold;

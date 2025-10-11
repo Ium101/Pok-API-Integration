@@ -12,12 +12,12 @@ function formatarNome(nome) {
   
   function criarTabelaStats(stats) {
     return `
-      <h3>Status Base</h3>
+      <h3>Status Base / Base Stats</h3>
       <table>
         <tr>
-          <th>Status</th>
-          <th>Valor</th>
-          <th>Barra</th>
+          <th>Status / Stat</th>
+          <th>Valor / Value</th>
+          <th>Barra / Bar</th>
         </tr>
         ${stats.map(stat => `
           <tr>
@@ -36,20 +36,20 @@ function formatarNome(nome) {
   
   function criarTabelaHabilidades(habilidades) {
     return `
-      <h3>Habilidades</h3>
+      <h3>Habilidades / Abilities</h3>
       <ul>
-        ${habilidades.map(h => `<li>${formatarNome(h.ability.name)}${h.is_hidden ? " (oculta)" : ""}</li>`).join('')}
+        ${habilidades.map(h => `<li>${formatarNome(h.ability.name)}${h.is_hidden ? " (oculta / hidden)" : ""}</li>`).join('')}
       </ul>
     `;
   }
   
   function criarTabelaInfos(dados) {
     return `
-      <h3>Informações Gerais</h3>
+      <h3>Informações Gerais / General Information</h3>
       <table>
-        <tr><th>Altura</th><td>${dados.height / 10} m</td></tr>
-        <tr><th>Peso</th><td>${dados.weight / 10} kg</td></tr>
-        <tr><th>Base de Experiência</th><td>${dados.base_experience}</td></tr>
+        <tr><th>Altura / Height</th><td>${dados.height / 10} m</td></tr>
+        <tr><th>Peso / Weight</th><td>${dados.weight / 10} kg</td></tr>
+        <tr><th>Base de Experiência / Base Experience</th><td>${dados.base_experience}</td></tr>
       </table>
     `;
   }
@@ -59,14 +59,14 @@ function formatarNome(nome) {
     const termo = input.value.trim().toLowerCase();
     const resultado = document.getElementById("resultado");
   
-    resultado.className = "loading";
-    resultado.style.color = "black";
-    resultado.innerHTML = "Carregando...";
+  resultado.className = "loading";
+  resultado.style.color = "black";
+  resultado.innerHTML = "Carregando... / Loading...";
   
     if (!termo) {
       resultado.className = "default-bg";
       resultado.style.color = "black";
-      resultado.innerHTML = "<p>Por favor, digite o nome ou ID do Pokémon.</p>";
+      resultado.innerHTML = "<p>Por favor, digite o nome ou ID do Pokémon. / Please enter the name or ID of the Pokémon.</p>";
       return;
     }
   
@@ -99,7 +99,7 @@ function formatarNome(nome) {
     } catch (error) {
       resultado.className = "default-bg";
       resultado.style.color = "black";
-      resultado.innerHTML = `<p class="error">Erro: ${error.message}</p>`;
+      resultado.innerHTML = `<p class="error">Erro / Error: ${error.message}</p>`;
     }
   }
   
